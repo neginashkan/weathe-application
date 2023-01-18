@@ -68,6 +68,7 @@ nav.each-day-weather-section-2 li:last-child {
 .search-button {
   padding: 16px 20px;
 }
+.style-icon-g-l:hover,
 .search-button:hover,
 .next:hover .search-button:focus {
   cursor: pointer;
@@ -112,4 +113,15 @@ nav.each-day-weather-section-2 li:last-child {
 }
 .search {
   display: flex;
+}
+.github-linkedln-ul{
+  display: flex;
+  list-style: none;
+}
+.github-linkedln-ul li{
+  margin: 0 20px;
+}
+.style-icon-g-l{
+  color: #ffffff;
+  font-size: 50px;
 }
