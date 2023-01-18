@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" href="images/Sunny with cloud.png">
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
@@ -37,7 +38,7 @@
           />
         </div>
         <div class="col-lg-2 location col-sm-6 col-md-6 sm-m-5">
-          <i class="fas fa-map-marker-alt location-icon"></i> Iran,Urmia
+          <i class="fas fa-map-marker-alt location-icon"></i> <span id="country"></span><span id="city"></span>
         </div>
       </div>
       <div class="row ">
@@ -58,7 +59,7 @@
                 id="location-input"
                 name="location-input"
               />
-              <button type="button" class="search-button">
+              <button type="button" class="search-button" id="search-btn">
                 <i class="fas fa-search search-icon"></i>
               </button>
             </div>
@@ -89,15 +90,15 @@
             <ul>
               <li>
                 <i class="fa-solid fa-wind Wind-icon"></i> Wind
-                <span class="Wind">8 </span>km/h
+                <span class="Wind" id="wind"> </span> km/h
               </li>
               <li>
                 <i class="fa-solid fa-droplet Hum-icon"></i> Hum
-                <span class="Hum">77</span> %
+                <span class="Hum" id="humidity"></span> %
               </li>
               <li>
-                <i class="fa-solid fa-cloud-rain Rain-icon"></i> Rain
-                <span class="Rain">8</span> %
+                <!-- <i class="fa-solid fa-temperature-empty"></i>  -->
+                <span id="description"></span>
               </li>
             </ul>
           </nav>
@@ -182,7 +183,7 @@
           </nav>
       </div>
       <div class="row">
-        <div class="col-12"><a href="https://github.com/neginashkan/weathe-application" target="_blank" rel="noopener noreferrer">open source code</a> by Negin ashkan</div>
+        <div class="col-12 mb-3"><a href="https://github.com/neginashkan/weathe-application" target="_blank" rel="noopener noreferrer">open source code</a> by Negin ashkan</div>
       </div>
       <div class="row">
                 <div class="col-12">
