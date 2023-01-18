@@ -1,0 +1,115 @@
+
+/*! Typography !*/
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(248.66deg, #f6ed96 0%, #a9a3f5 100%);
+  color: #ffffff;
+  font-weight: 300; /* light*/
+  text-shadow: -1.39839px 2.09758px 0.699193px rgba(0, 0, 0, 0.1);
+}
+
+#degree {
+  line-height: 120%;
+  font-weight: 100;
+  font-size: 164px;
+}
+
+.celsius-sign-first {
+  line-height: 120%;
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: -0.05em;
+  position: relative;
+  bottom: 4em;
+  right: 2em;
+}
+/*! Layout  !*/
+/** navigation**/
+
+nav ul {
+  display: flex;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  align-items: center;
+}
+
+nav.style-nav li {
+  line-height: 28px;
+  padding: 0 35px;
+  border-right: 1px solid #ffffff;
+}
+nav.style-nav li:last-child {
+  border: none;
+}
+
+nav.each-day-weather li {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 11.3852px;
+  line-height: 30px;
+  margin-right: 54px;
+  color: #ffffff;
+}
+nav.each-day-weather-section-2 li:last-child {
+  font-size: 1.5rem;
+  background: none;
+  font-weight: 100;
+}
+
+
+.location-input {
+  font-size: 16px;
+  font-weight: 300;
+  padding: 16px 60px 9px 18px;
+  outline: none;
+}
+.search-button {
+  padding: 16px 20px;
+}
+.search-button:hover,
+.next:hover .search-button:focus {
+  cursor: pointer;
+  box-shadow: -1.39839px 2.09758px 0.699193px rgba(0, 0, 0, 0.1);
+}
+.search-button,
+.location-input {
+  text-shadow: -1.51px 2.26px 0.75px rgba(0, 0, 0, 0.1);
+  border: none;
+  color: #ffffff;
+  border-radius: 20px;
+  backdrop-filter: blur(50px);
+  background: linear-gradient(
+    116.79deg,
+    rgba(255, 255, 255, 0.48) 0%,
+    rgba(255, 255, 255, 0.12) 99.45%
+  );
+  margin: 0 0.5em;
+  display: block;
+}
+::placeholder {
+  color: #ffffff;
+}
+.date {
+  font-size: 36px;
+}
+.weekday-clock-time li {
+  font-size: 24px;
+}
+.weekday-clock-time li:first-child {
+  padding-left: 0;
+}
+
+.location,
+.location-icon {
+  font-size: 20px;
+  padding: 0 0.5em;
+}
+.next {
+  text-decoration: none;
+  color: #ffffff;
+}
+.search {
+  display: flex;
+}
