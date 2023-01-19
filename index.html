@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="images/Sunny with cloud.png">
+    <link id="web-icon" rel="icon" href="images/Sunny with cloud.png">
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
@@ -32,20 +32,21 @@
       <div class="row">
         <div class="col-lg-10 col-sm-6 col-md-6">
           <img
-            src="images/Sunny with cloud.png"
-            alt="Sunny with cloud"
+          id="big-icon"
+            src=""
+            alt=""
             class="big-sun-image"
           />
         </div>
         <div class="col-lg-2 location col-sm-6 col-md-6 sm-m-5">
-          <i class="fas fa-map-marker-alt location-icon"></i> <span id="country"></span><span id="city"></span>
+          <i class="fas fa-map-marker-alt location-icon"></i> <span id="country"></span> , <span id="city"></span>
         </div>
       </div>
       <div class="row ">
         <div class="col-lg-6  col-sm-12">
           <div class="degree">
-            <span id="degree">4 </span>
-            <span class="celsius-sign-first">&#x2103;</span>
+            <span id="degree"></span>
+            <span class="sign-style"><a class="celsius" href="#" id="celsius">&#8451;</a> | <a class="fahrenheit" href="#" id="fahrenheit"> &#8457;</a></span>
           </div>
         </div>
         <div class="col-lg-6 col-sm-12 ">
@@ -69,16 +70,17 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="date">
-            <span class="day">5</span>th <span class="month">Dec</span> ‘<span
+            <span class="day" id="number-day"></span>th <span class="month" id="month"></span> ‘<span
               class="year"
-              >2022</span
+              id="year"
+              ></span
             >
           </div>
           <nav class="style-nav weekday-clock-time">
             <ul>
-              <li><span class="weekday">Monday</span></li>
+              <li><span class="weekday" id="week-day"></span></li>
               <li>
-                <span class="clock">11:42</span><span class="time">am</span>
+                <span id="hour"></span>:<span id="minute"></span>
               </li>
             </ul>
           </nav>
