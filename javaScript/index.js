@@ -80,8 +80,6 @@ function currentTime(date) {
   document.getElementById("minute").textContent = minute;
   document.getElementById("hour").textContent = hour;
 }
-currentTime(new Date());
-handleClick("urmia");
 
 // ---------------------------
 function showFahrenheit(event) {
@@ -102,3 +100,6 @@ function showCelsius(event) {
 }
 const celsiusEl = document.getElementById("celsius");
 celsiusEl.addEventListener("click", showCelsius);
+
+currentTime(new Date());
+handleClick("urmia");

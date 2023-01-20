@@ -10,7 +10,7 @@ body {
   text-shadow: -1.39839px 2.09758px 0.699193px rgba(0, 0, 0, 0.1);
 }
 
-#degree {
+.degree {
   line-height: 120%;
   font-weight: 100;
   font-size: 164px;
@@ -57,7 +57,7 @@ nav.each-day-weather li {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 11.3852px;
   line-height: 30px;
-  margin-right: 54px;
+  margin-right: 45px;
   color: #ffffff;
 }
 nav.each-day-weather-section-2 li:last-child {
@@ -95,7 +95,6 @@ nav.each-day-weather-section-2 li:last-child {
     rgba(255, 255, 255, 0.12) 99.45%
   );
   margin: 0 0.5em;
-  display: block;
 }
 ::placeholder {
   color: #ffffff;
@@ -136,4 +135,10 @@ nav.each-day-weather-section-2 li:last-child {
 
 .active{
   text-decoration: underline;
+}
+
+
+
+.why{
+  border: 1px solid black;
 }
