@@ -45,26 +45,23 @@
       <div class="row">
         <div class="col-lg-6  col-sm-12">
             <span class="degree" id="degree"></span>
-            <span class="sign-style"><a class="celsius" href="#" id="celsius">&#8451;</a> | <a class="fahrenheit" href="#" id="fahrenheit"> &#8457;</a></span>
+            <span class="sign-style"><a class="celsius active" href="#" id="celsius">&#8451;</a> | <a class="fahrenheit" href="#" id="fahrenheit"> &#8457;</a></span>
         </div>
         <div class="col-lg-6 col-sm-12 ">
           <div class="row d-flex flex-row">
-            <div class="col-sm-8  col-8 gx-0 me-0">
-              <input
-                type="text"
-                placeholder="Enter a city"
-                autofocus
-                class="location-input"
-                id="location-input"
-                name="location-input"
-              />
-            </div>
-            <div class="col-sm-3  col-4 gx-0">
-              <button type="button" class="search-button" id="search-btn">
-                <i class="fas fa-search search-icon"></i>
-              </button>
-            </div>
-
+                <form class="col-12 d-inline-flex" id="search-form">
+                <input
+                  type="text"
+                  placeholder="Enter a city"
+                  autofocus
+                  class="location-input"
+                  id="location-input"
+                  name="location-input"
+                />
+                <button type="submit" class="search-button" id="search-btn">
+                  <i class="fas fa-search search-icon"></i>
+                </button>
+              </form>
           </div>
         </div>
       </div>

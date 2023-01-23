@@ -1,7 +1,6 @@
-const searchBtn = document.querySelector("#search-btn");
+const searchForm = document.querySelector("#search-form");
 let celsius = null;
 function showUserSearch(response) {
-  console.log(response);
   let cityEl = document.querySelector("#city");
   let countryEl = document.querySelector("#country");
   let humidityEl = document.getElementById("humidity");
@@ -19,7 +18,7 @@ function showUserSearch(response) {
   webIconEl.href = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
   bigIconEl.src = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
   bigIconEl.alt = descriptionEl;
-  degreeEl.innerHTML = celsius;
+  showCelsius(event);
   currentTime(new Date(response.data.dt * 1000));
 }
 function handleClick(city) {
@@ -33,7 +32,7 @@ function userSearch(event) {
   let city = document.querySelector("#location-input").value;
   handleClick(city);
 }
-searchBtn.addEventListener("click", userSearch);
+searchForm.addEventListener("submit", userSearch);
 
 // -----------------set time--------------------------
 function currentTime(date) {

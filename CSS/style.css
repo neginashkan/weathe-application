@@ -94,7 +94,6 @@ nav.each-day-weather-section-2 li:last-child {
     rgba(255, 255, 255, 0.48) 0%,
     rgba(255, 255, 255, 0.12) 99.45%
   );
-  margin: 0 0.5em;
 }
 ::placeholder {
   color: #ffffff;
