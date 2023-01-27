@@ -53,20 +53,20 @@ nav.style-nav li:last-child {
   border: none;
 }
 
-nav.each-day-weather li {
+.style-forecast {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 11.3852px;
   line-height: 30px;
-  margin-right: 45px;
   color: #ffffff;
-}
-nav.each-day-weather-section-2 li:last-child {
-  font-size: 1.5rem;
-  background: none;
-  font-weight: 100;
+  text-align: center;
+  margin: 0;
 }
 
-
+.forecast-img{
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
 .location-input {
   font-size: 16px;
   font-weight: 300;
@@ -136,7 +136,10 @@ nav.each-day-weather-section-2 li:last-child {
   text-decoration: underline;
 }
 
-
+.min-degree ,.c-style{
+  opacity: 0.4;
+  color: black;
+}
 
 .why{
   border: 1px solid black;

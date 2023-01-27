@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link id="web-icon" rel="icon" href="images/Sunny with cloud.png">
+    <link id="web-icon" rel="icon" href="images/Sunny with cloud.png" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
@@ -28,58 +28,56 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="container mt-5">
+    <div class="container mt-5 align-content-center">
       <div class="row">
         <div class="col-lg-10 col-sm-6 col-md-6">
-          <img
-          id="big-icon"
-            src=""
-            alt=""
-            class="big-sun-image"
-          />
+          <img id="big-icon" src="" alt="" class="big-sun-image" />
         </div>
         <div class="col-lg-2 location col-sm-6 col-md-6 sm-m-5">
-          <i class="fas fa-map-marker-alt location-icon"></i> <span id="country"></span> , <span id="city"></span>
+          <i class="fas fa-map-marker-alt location-icon"></i>
+          <span id="country"></span> , <span id="city"></span>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-6  col-sm-12">
-            <span class="degree" id="degree"></span>
-            <span class="sign-style"><a class="celsius active" href="#" id="celsius">&#8451;</a> | <a class="fahrenheit" href="#" id="fahrenheit"> &#8457;</a></span>
+        <div class="col-lg-6 col-sm-12">
+          <span class="degree" id="degree"></span>
+          <span class="sign-style"
+            ><a class="celsius" href="#" id="celsius">&#8451;</a>
+             <!-- |<a class="fahrenheit" href="#" id="fahrenheit"> &#8457;</a> -->
+            </span
+          >
         </div>
-        <div class="col-lg-6 col-sm-12 ">
+        <div class="col-lg-6 col-sm-12">
           <div class="row d-flex flex-row">
-                <form class="col-12 d-inline-flex" id="search-form">
-                <input
-                  type="text"
-                  placeholder="Enter a city"
-                  autofocus
-                  class="location-input"
-                  id="location-input"
-                  name="location-input"
-                />
-                <button type="submit" class="search-button" id="search-btn">
-                  <i class="fas fa-search search-icon"></i>
-                </button>
-              </form>
+            <form class="col-12 d-inline-flex" id="search-form">
+              <input
+                type="text"
+                placeholder="Enter a city"
+                autofocus
+                class="location-input"
+                id="location-input"
+                name="location-input"
+              />
+              <button type="submit" class="search-button" id="search-btn">
+                <i class="fas fa-search search-icon"></i>
+              </button>
+            </form>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <div class="date">
-            <span class="day" id="number-day"></span>th <span class="month" id="month"></span> ‘<span
+            <span class="day" id="number-day"></span>th
+            <span class="month" id="month"></span> ‘<span
               class="year"
               id="year"
-              ></span
-            >
+            ></span>
           </div>
           <nav class="style-nav weekday-clock-time">
             <ul>
               <li><span class="weekday" id="week-day"></span></li>
-              <li>
-                <span id="hour"></span>:<span id="minute"></span>
-              </li>
+              <li><span id="hour"></span>:<span id="minute"></span></li>
             </ul>
           </nav>
         </div>
@@ -97,102 +95,13 @@
                 <span class="Hum" id="humidity"></span> %
               </li>
               <li>
-                
                 <span id="description"></span>
               </li>
             </ul>
           </nav>
         </div>
       </div>
-      <div class="row weather-days">
-        <div class="col-lg-5  ps-lg-5">
-          <nav class="each-day-weather each-day-weather-section-1 " id="a" >
-            <ul>
-              <li>
-                <div class="temperature">
-                  <span id="sub-degree">6 </span>
-                  <span class="celsius-sign">&#x2103;</span>
-                </div>
-                <img
-                  src="images/Sunny with cloud small.png"
-                  alt="Sunny with cloud"
-                  class="small-sun-image"
-                />
-                <div class="week-day">Tue</div>
-              </li>
-              <li>
-                <div class="temperature ">
-                  <span id="sub-degree">8 </span>
-                  <span class="celsius-sign">&#x2103;</span>
-                </div>
-                <img
-                  src="images/Sunny with cloud small.png"
-                  alt="Sunny with cloud"
-                  class="small-sun-image"
-                />
-                <div class="week-day">Wed</div>
-              </li>
-              <li>
-                <div class="temperature ">
-                  <span id="sub-degree">8 </span>
-                  <span class="celsius-sign">&#x2103;</span>
-                </div>
-                <img
-                src="images/Sunny with cloud small.png"
-                alt="Sunny with cloud"
-                class="small-sun-image"
-                />
-                <div class="week-day">Thu</div>
-              </li>
-            </div>
-            <!-- !!! -->
-            <div class="col-lg-4 ">
-              <nav class="each-day-weather each-day-weather-section-2 ">
-                <ul>
-                  <li>
-                    <div class="temperature ">
-                      <span id="sub-degree">7 </span>
-                      <span class="celsius-sign">&#x2103;</span>
-                    </div>
-                    <img
-                      src="images/Sunny with cloud small.png"
-                      alt="Sunny with cloud"
-                      class="small-sun-image"
-                    />
-                    <div class="week-day">Fri</div>
-                  </li>
-                  <li>
-                    <div class="temperature ">
-                      <span id="sub-degree">7 </span>
-                      <span class="celsius-sign">&#x2103;</span>
-                    </div>
-                    <img
-                      src="images/Sunny with cloud small.png"
-                      alt="Sunny with cloud"
-                      class="small-sun-image"
-                    />
-                    <div class="week-day">Sat</div>
-                  </li>
-                  <li>
-                    <a href="#" class="next">></a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            </ul>
-          </nav>
-      </div>
-      <div class="row">
-        <div class="col-12 mb-3"><a href="https://github.com/neginashkan/weathe-application" target="_blank" rel="noopener noreferrer">open source code</a> by Negin ashkan</div>
-      </div>
-      <div class="row">
-                <div class="col-12">
-          <ul class="github-linkedln-ul">
-            <li><a href="https://github.com/neginashkan" title="github" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github style-icon-g-l"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/negin-ashkan-b84302256/" title="linkedin" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin style-icon-g-l"></i></a></li>
-          </ul>
-        </div>
-      </div>
+      <div class="weather-forecast" id="weather-forecast"></div>
     </div>
     <script src="javaScript/index.js"></script>
   </body>

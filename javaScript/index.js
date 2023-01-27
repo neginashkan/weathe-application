@@ -1,5 +1,54 @@
 const searchForm = document.querySelector("#search-form");
 let celsius = null;
+function setForecastWeekDay(timeNumber) {
+  let date = new Date(timeNumber * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
+  return day;
+}
+function displayForecast(response) {
+  let forecastArray = response.data.daily;
+  let weatherForecastEl = document.getElementById("weather-forecast");
+  let allDayForecast = `<div class="row mb-3">`;
+  forecastArray.forEach(function (eachForecastDay,index) {
+    if(index===0){
+      let bigIconEl = document.querySelector("#big-icon");
+      bigIconEl.src = `${eachForecastDay.condition.icon_url}`
+      bigIconEl.alt = `${eachForecastDay.condition.icon}`;
+    }
+    if(index>0 && index<6){
+      allDayForecast += `
+      <div class="col-2 style-forecast me-2 ">
+              <div class="temperature">
+                <span id="max-degree" class="max-degree">${Math.round(
+                  eachForecastDay.temperature.maximum
+                )}</span
+                ><span class="celsius-sign">&#x2103;</span><br /><span
+                  id="min-degree"
+                  class="min-degree"
+                  >${Math.round(eachForecastDay.temperature.minimum)}</span
+                ><span class="celsius-sign c-style">&#x2103;</span>
+              </div>
+              <img
+                src="${eachForecastDay.condition.icon_url}"
+                alt="${eachForecastDay.condition.icon}"
+                class="forecast-img"
+              />
+              <div class="week-day">${setForecastWeekDay(
+                eachForecastDay.time
+              )}</div>
+            </div>`;
+      
+    }
+  });
+  allDayForecast += `</div>`;
+  weatherForecastEl.innerHTML = allDayForecast;
+}
+function getForecast(coordinates, city) {
+  let apiKey = "04oabt67c234956913f3d410bfd5b681";
+  let url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios.get(url).then(displayForecast);
+}
 function showUserSearch(response) {
   let cityEl = document.querySelector("#city");
   let countryEl = document.querySelector("#country");
@@ -20,6 +69,7 @@ function showUserSearch(response) {
   bigIconEl.alt = descriptionEl;
   showCelsius(event);
   currentTime(new Date(response.data.dt * 1000));
+  getForecast(response.data.coord, response.data.name);
 }
 function handleClick(city) {
   const apiKey = "3c065e33596a9deda1b7045f5d3e8811";
@@ -80,22 +130,22 @@ function currentTime(date) {
   document.getElementById("hour").textContent = hour;
 }
 
-// ---------------------------
-function showFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheit = Math.round((celsius * 9) / 5 + 32);
-  document.querySelector("#degree").textContent = fahrenheit;
-  document.querySelector("#celsius").classList.remove("active");
-  document.querySelector("#fahrenheit").classList.add("active");
-}
-const fahrenheitEl = document.getElementById("fahrenheit");
-fahrenheitEl.addEventListener("click", showFahrenheit);
+// -------------remove Fahrenheit--------------
+// function showFahrenheit(event) {
+//   event.preventDefault();
+//   let fahrenheit = Math.round((celsius * 9) / 5 + 32);
+//   document.querySelector("#degree").textContent = fahrenheit;
+//   document.querySelector("#celsius").classList.remove("active");
+//   document.querySelector("#fahrenheit").classList.add("active");
+// }
+// const fahrenheitEl = document.getElementById("fahrenheit");
+// fahrenheitEl.addEventListener("click", showFahrenheit);
 
 function showCelsius(event) {
   event.preventDefault();
-  document.querySelector("#degree").textContent =celsius;
-  document.querySelector("#fahrenheit").classList.remove("active");
-  document.querySelector("#celsius").classList.add("active");
+  document.querySelector("#degree").textContent = celsius;
+  // document.querySelector("#fahrenheit").classList.remove("active");
+  // document.querySelector("#celsius").classList.add("active");
 }
 const celsiusEl = document.getElementById("celsius");
 celsiusEl.addEventListener("click", showCelsius);
